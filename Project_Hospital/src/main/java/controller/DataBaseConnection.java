@@ -16,11 +16,7 @@ public class DataBaseConnection {
     String password;
 
     public DataBaseConnection() {
-        driver = "com.mysql.jdbc.Driver";
-        connectionURL = "jdbc:mysql://localhost:3306/";
-        dbName = "spital";
-        username = "root";
-        password = "";
+      
     }
 
     public Connection getConnection() throws Exception {
@@ -70,12 +66,7 @@ public class DataBaseConnection {
             //Update mai complex:
             String sql2 = "UPDATE pacienti SET diagnostic =?, cheltuieli=?, doctori=?  WHERE numel=? and prenume=?";
             PreparedStatement statement2 = conn.prepareStatement(sql2);
-            statement2.setString(1, "bronsita");
-            statement2.setFloat(2, 12);
-            statement2.setString(3,"Anca Serea" );
-            statement2.setString(4, "Vasilache");
-            statement2.setString(5, "Maria");
-
+          
             statement2.executeUpdate();
 
             conn.close();
